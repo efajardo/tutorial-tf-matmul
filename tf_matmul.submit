@@ -13,7 +13,7 @@ request_disk = 4 GB
 
 # EXECUTABLE is the program your job will run It's often useful
 # to create a shell script to "wrap" your actual work.
-Executable = tf-matmul-wrapper.sh
+Executable = tf_matmul_wrapper.sh
 Arguments =
 
 # inputs/outputs
