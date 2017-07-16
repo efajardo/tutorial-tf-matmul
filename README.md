@@ -30,8 +30,8 @@ Before running this job on the OSG, let us see how to execute the tensorflow exa
     $ python tf_matmul.py 
 
     Traceback (most recent call last):
-    File "tf_matmul.py", line 3, in <module>
-    import tensorflow as tf
+      File "tf_matmul.py", line 3, in <module>
+        import tensorflow as tf
     ImportError: No module named tensorflow
 
 throws the error message that tensorflow is not available.  We need to execute the program inside the tensorflow 
