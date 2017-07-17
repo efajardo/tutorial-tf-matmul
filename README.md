@@ -138,5 +138,19 @@ The present job should be finished quickly (less than an hour). You can check th
 The output of the job is available in the file `tf_matmul.output`. 
 
 
+## Running on GPUs
+
+You can also steer the job to run on GPUs, but note that the number of GPUs available on 
+OSG is limited. Even though the job will execute faster, it might sit in the queue waiting
+longer than a CPU-only job.
+
+The submit file for a GPU jobs is `tf_matmul_gpu.submit` The only difference is
+`request_gpus = 1` and specifying a GPU image:
+
+    request_gpus = 1
+    ...
+    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow-gpu:latest"
+
+
 ## Getting Help
 For assistance or questions, please email the OSG User Support team  at [user-support@opensciencegrid.org](mailto:user-support@opensciencegrid.org) or visit the [help desk and community forums](http://support.opensciencegrid.org).
