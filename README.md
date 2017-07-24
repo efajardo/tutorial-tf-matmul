@@ -38,10 +38,10 @@ throws the error message that tensorflow is not available.  We need to execute t
 container. Singularity offers couple of ways to run an image. One of them is to execute a shell inside the 
 image (See [Singularity documentation for more details](http://singularity.lbl.gov/user-guide)). 
 
-    $ singularity shell /cvmfs/singularity.opensciencegrid.org/tensorflow/tensorflow:latest
+    $ singularity shell /cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow:latest
 
 This should drop you inside the container shell in few minutes. The tensorflow image `tensorflow:latest` is located 
-at /cvmfs/singularity.opensciencegrid.org/tensorflow/ (more details about image file construction and distribution are [outlined here](https://support.opensciencegrid.org/solution/articles/12000024676-singularity-containers))
+at /cvmfs/singularity.opensciencegrid.org/opensciencegrid/ (more details about image file construction and distribution are [outlined here](https://support.opensciencegrid.org/solution/articles/12000024676-singularity-containers))
 
 Now we run the program inside the container
 
@@ -68,7 +68,7 @@ We want to run the program on a remote worker machine on the OSG that supports t
 
 In addition, we also provide the full path of the image via the keyword `+SingularityImage`:
 
-    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/tensorflow/tensorflow:latest"
+    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow:latest"
 
 The image is distributed to the remote worker machines through `cvmfs`. Although there are multiple ways to aquire the 
 image file for a job on the OSG machine, the image distributed through `cvmfs` is preferred. 
@@ -86,7 +86,7 @@ Let us take a look at the  condor job description file `tf_matmul.submit`:
     request_disk = 4 GB
 
     # Singularity settings
-    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/tensorflow/tensorflow:latest"
+    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow:latest"
 
     # EXECUTABLE is the program your job will run It's often useful
     # to create a shell script to "wrap" your actual work.
@@ -128,7 +128,7 @@ We submit the job using `condor_submit` command as follows
 	$ condor_submit tf_matmul.submit 
 
 The job will look for a machine on OSG that has singularity installed, creates the singularity container with the 
-image `/cvmfs/singularity.opensciencegrid.org/tensorflow/tensorflow:latest` and executes the program `tf_matmul.py`. 
+image `/cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow:latest` and executes the program `tf_matmul.py`. 
 
 
 The present job should be finished quickly (less than an hour). You can check the status of the submitted job by using the `condor_q` command as follows
