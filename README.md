@@ -9,7 +9,7 @@ In this tutorial, we see how to submit a [tensorflow](https://www.tensorflow.org
 
 Let us utilize the `tutorial` command. In the command prompt, type
 
-	 $ tutorial-tf-matmul  # Copies input and script files to the directory tutorial-tf-matmul
+	 $ tutorial tf-matmul  # Copies input and script files to the directory tutorial-tf-matmul
  
 This will create a directory `tutorial-tf-matmul` with the following files
 
